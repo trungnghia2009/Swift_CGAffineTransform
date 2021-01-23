@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CGAffineTransform" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swift" translatesAutoresizingMaskIntoConstraints="NO" id="Zpl-9M-4TE">
+                                <rect key="frame" x="132" y="144" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="g9g-zz-bzv"/>
+                                    <constraint firstAttribute="width" constant="150" id="zYq-pQ-kvN"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cr5-AT-flg">
+                                <rect key="frame" x="175" y="815" width="64" height="47"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="25"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LeD-qu-JPY"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="2Fd-yI-uwD">
+                                <rect key="frame" x="18" y="780" width="378" height="31"/>
+                                <connections>
+                                    <action selector="sliderDidScroll:" destination="BYZ-38-t0r" eventType="valueChanged" id="bMp-C8-I6Z"/>
+                                </connections>
+                            </slider>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3sf-OR-n6x">
+                                <rect key="frame" x="22" y="739" width="370" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="370" id="47E-ps-pJL"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Center"/>
+                                    <segment title="Left"/>
+                                    <segment title="Right"/>
+                                    <segment title="Top"/>
+                                    <segment title="Bottom"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedControlDidTap:" destination="BYZ-38-t0r" eventType="valueChanged" id="HOl-dA-DF7"/>
+                                </connections>
+                            </segmentedControl>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="tPg-PR-sCX">
+                                <rect key="frame" x="96" y="680" width="222" height="42"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10w-LQ-vzC">
+                                        <rect key="frame" x="0.0" y="0.0" width="110" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Rotation"/>
+                                        <connections>
+                                            <action selector="rotationDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uLs-dx-NhU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SzP-67-ZQw">
+                                        <rect key="frame" x="152" y="0.0" width="70" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="Oxd-7q-jk9"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Revert"/>
+                                        <connections>
+                                            <action selector="rotationRevertDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4rm-lU-Ceu"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="222" id="cNG-xL-Nbp"/>
+                                    <constraint firstAttribute="bottom" secondItem="SzP-67-ZQw" secondAttribute="bottom" id="fmc-mW-ZTL"/>
+                                    <constraint firstAttribute="height" constant="42" id="vVP-7g-sft"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nuc-Bn-fMc">
+                                <rect key="frame" x="145" y="640" width="124" height="30"/>
+                                <state key="normal" title="Custom transform"/>
+                                <connections>
+                                    <action selector="customTransformDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="juc-eg-tLH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2Fd-yI-uwD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="51q-6J-TqP"/>
+                            <constraint firstItem="cr5-AT-flg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ef0-LH-HY7"/>
+                            <constraint firstItem="Zpl-9M-4TE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HqN-lc-7OM"/>
+                            <constraint firstItem="cr5-AT-flg" firstAttribute="top" secondItem="2Fd-yI-uwD" secondAttribute="bottom" constant="5" id="SQ8-my-A9w"/>
+                            <constraint firstItem="Nuc-Bn-fMc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T1b-K7-knT"/>
+                            <constraint firstItem="2Fd-yI-uwD" firstAttribute="top" secondItem="3sf-OR-n6x" secondAttribute="bottom" constant="10" id="Yb3-73-rXd"/>
+                            <constraint firstItem="tPg-PR-sCX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zlw-s2-K7y"/>
+                            <constraint firstItem="cr5-AT-flg" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="asR-R8-4ih"/>
+                            <constraint firstItem="3sf-OR-n6x" firstAttribute="top" secondItem="tPg-PR-sCX" secondAttribute="bottom" constant="17" id="brm-A3-xhj"/>
+                            <constraint firstItem="3sf-OR-n6x" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e40-qv-c9p"/>
+                            <constraint firstItem="2Fd-yI-uwD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="emH-bb-FK4"/>
+                            <constraint firstItem="tPg-PR-sCX" firstAttribute="top" secondItem="Nuc-Bn-fMc" secondAttribute="bottom" constant="10" id="jVj-jE-Mzr"/>
+                            <constraint firstItem="Zpl-9M-4TE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="jxw-Jl-Ef3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="Zpl-9M-4TE" id="tcb-0n-KJW"/>
+                        <outlet property="segmentedControlView" destination="3sf-OR-n6x" id="1nm-ag-bFy"/>
+                        <outlet property="sliderView" destination="2Fd-yI-uwD" id="yea-zj-PAu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="114.50892857142857"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="swift" width="1000" height="1000"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
